@@ -34,7 +34,7 @@ volumes:
     driver_opts:
       type: none
       #fill out your absolute path to your folder here
-      device: /winter-classes/cmsc388T-web-template
+      device: ~/winter-classes/cmsc388T-web-template
       o: bind
 
 networks:
