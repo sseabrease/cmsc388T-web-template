@@ -4,3 +4,20 @@
 #expose port 8080 and run the app
 #the docker lecture will help you complete this file 
 #there should be a total of 9 lines
+FROM node:10-alpine
+
+RUN mkdir -p /home/node/app/ && chown -R node:node /home/node/app
+RUN mkdir -p /home/node/app/node_modules && chown -R node:node /home/node/app/node_modules
+
+WORKDIR /home/node/app
+
+COPY package.json ./
+COPY app.js ./
+
+RUN npm install
+
+EXPOSE 8080
+
+CMD ["node app.js"]
+
+
