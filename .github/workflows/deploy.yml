@@ -1,7 +1,7 @@
 name: deployment workflow
 on: 
   push:
-    branches: [master]
+    branches: [main]
 jobs: 
   job_one: 
     name: Deploy
@@ -15,5 +15,6 @@ jobs:
           password: ${{ secrets.PASSWORD }}
           port : ${{ secrets.PORT }}
           script: |
+              cd ../pub
               cd sseabrease.github.io
               git pull
